@@ -10,4 +10,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
     value1 = tuple_a[0] + tuple_b[0]
     value2 = tuple_a[1] + tuple_b[1]
     tuple_d = (value1, value2)
-    return(tuple_d)
+    return (tuple_d)
