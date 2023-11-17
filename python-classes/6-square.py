@@ -7,7 +7,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """Validate position"""
         if type(position) is tuple and len(position) == 2:
-                if any((type(i) is int) and (i >= 0) for i in position):
+                if all((type(i) is int) and (i >= 0) for i in position):
                     self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
