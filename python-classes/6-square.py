@@ -34,6 +34,7 @@ class Square:
         else:
             self.__size = value
 
+    """Set the value of position"""
     @position.setter
     def position(self, position):
         if len(position) != 2 or any(i < 0 for i in position):
