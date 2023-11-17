@@ -2,4 +2,6 @@
 
 
 class Square:
+    "this is the square"
+
     pass
