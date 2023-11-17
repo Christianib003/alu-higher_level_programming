@@ -5,8 +5,11 @@
 class Square:
     """Instance constructor"""
     def __init__(self, size=0, position=(0, 0)):
-
+        """Validate position"""
+        if type(position) is not tuple or len(position) != 2 or any(i < 0 for i in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
+
         """Validate size"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
@@ -37,22 +40,9 @@ class Square:
     """Set the value of position"""
     @position.setter
     def position(self, value):
-        """sets the private instance attribute position"""
-        check = 0
-        while 1:
-            if type(value) is not tuple or len(value) is not 2:
-                check += 1
-                break
-            if type(value[0]) is not int or type(value[1]) is not int:
-                check += 1
-                break
-            if value[0] < 0 or value[1] < 0:
-                check += 1
-            break
-        if check is 0:
-            self.__position = value
-        else:
+        if type(value) is not tuple or len(value) != 2 or any(i < 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     """Return the value of the area of the square"""
     def area(self):
