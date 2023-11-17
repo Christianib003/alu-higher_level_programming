@@ -32,8 +32,8 @@ class Square:
     def area(self):
         return self.__size ** 2
 
-    """Print the square using #"""
     def my_print(self):
+        """Print the square using #"""
         i = 1
         while i <= self.__size:
             j = 1
