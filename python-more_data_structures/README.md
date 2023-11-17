@@ -1,1 +1,1 @@
-This is for studying more data structures
+This is for studying more about data structures
