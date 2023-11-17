@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""create a square class that has both size and position"""
 
 
 class Square:
