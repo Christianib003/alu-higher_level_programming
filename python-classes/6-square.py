@@ -6,7 +6,7 @@ class Square:
     """Instance constructor"""
     def __init__(self, size=0, position=(0, 0)):
         """Validate position"""
-        if type(position) is not tuple or len(position) != 2 or any((i < 0) or (type(i) is not tuple) for i in position):
+        if type(position) is not tuple or len(position) != 2 or any((i < 0) or (type(i) is not int) for i in position):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
