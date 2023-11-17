@@ -6,15 +6,19 @@ class Square:
     """Instance constructor"""
     def __init__(self, size=0, position=(0, 0)):
         """Validate position"""
-        self.__position = position
+        if type(position) is tuple and len(position) == 2:
+                if all((type(i) is int) and (i >= 0) for i in position):
+                    self.__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
         """Validate size"""
-        # if type(size) is not int:
-        #     raise TypeError("size must be an integer")
-        # elif size < 0:
-        #     raise ValueError("size must be >= 0")
-        # else:
-        self.__size = size
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
 
     """Get the value of private attribute size"""
     @property
