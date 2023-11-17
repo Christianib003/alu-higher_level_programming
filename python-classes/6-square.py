@@ -6,8 +6,9 @@ class Square:
     """Instance constructor"""
     def __init__(self, size=0, position=(0, 0)):
         """Validate position"""
-        if type(position) is not tuple or len(position) != 2 or any((type(i) is not int) or (i < 0) for i in position):
-            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(position) is not tuple or len(position) != 2:
+            if any((type(i) is not int) or (i < 0) for i in position):
+                raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
         """Validate size"""
@@ -40,8 +41,9 @@ class Square:
     """Set the value of position"""
     @position.setter
     def position(self, value):
-        if type(value) is not tuple or len(value) != 2 or any(i < 0 for i in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(value) is not tuple or len(value) != 2:
+            if any((type(i) is not int) or (i < 0) for i in value):
+                raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     """Return the value of the area of the square"""
