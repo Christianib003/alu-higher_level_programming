@@ -35,13 +35,10 @@ class Square:
 
     def my_print(self):
         """Print the square using #"""
-        i = 1
-        while i <= self.__size:
-            j = 1
-            while j <= self.__size:
-                if j == self.__size:
-                    print("#")
-                else:
+        if self.__size > 0:
+            for column in range(self.__size):
+                for row in range(self.__size):
                     print("#", end="")
-                j += 1
-            i += 1
+                print()
+        else:
+            print()
