@@ -1,42 +1,40 @@
 #!/usr/bin/python3
-"""create a square class that has both size and position"""
+"""creates class Square with
+private instance attribute size and position and
+public instance methods to calculate area and print square"""
 
 
 class Square:
-    """Instance constructor"""
+    """defines class with private instance attributes size and position
+and public instance methods to calculate area and print square."""
+
     def __init__(self, size=0, position=(0, 0)):
-        self.__position = position
+        """instantiates attribute size to 0 and position to (0, 0)"""
+        self.size = size
+        self.position = position
 
-        """Validate size"""
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-
-    """Get the value of private attribute size"""
     @property
     def size(self):
-        return self.__size
+        """get the private instance attribute size"""
+        return(self.__size)
 
-    @property
-    def position(self):
-        return self.__position
-
-    """Set the value of private attribute size"""
     @size.setter
     def size(self, value):
+        """sets the private instance attribute size"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
 
-    """Set the value of position"""
+    @property
+    def position(self):
+        """gets the private instance attribute position"""
+        return(self.__position)
+
     @position.setter
     def position(self, value):
+        """sets the private instance attribute position"""
         check = 0
         while 1:
             if type(value) is not tuple or len(value) is not 2:
@@ -53,11 +51,12 @@ class Square:
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
-    """Return the value of the area of the square"""
     def area(self):
-        return self.__size ** 2
+        """calculates and returns current square area"""
+        return(self.__size * self.__size)
 
     def my_print(self):
+        """prints square of size self.__size using #"""
         if self.__size > 0:
             for y in range(self.__position[1]):
                 print()
