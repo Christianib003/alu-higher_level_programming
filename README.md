@@ -1,2 +1,2 @@
 # alu-higher_level_programming
-This is the repository for studyin
+This is the repository for studyi
