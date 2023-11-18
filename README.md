@@ -1,2 +1,2 @@
 # alu-higher_level_programming
-This is the repository fo
+This is the repository f
