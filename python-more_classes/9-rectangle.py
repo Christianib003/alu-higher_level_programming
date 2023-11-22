@@ -9,7 +9,8 @@ and public class attributes to track of number of instances and print symbol
 and can print the rectangle using print_symbol with print() or str()
 and returns representation of the rectangle to be used by eval()
 and prints message when deleted
-and static method to compare and return the largest rectangle based on area"""
+and static method to compare and return the largest rectangle based on area
+and class method to return new Rectangle instance for a square"""
 
     number_of_instances = 0
     print_symbol = '#'
@@ -96,3 +97,7 @@ and static method to compare and return the largest rectangle based on area"""
             return (rect_2)
         else:
             return (rect_1)
+
+    @classmethod
+    def square(cls, size=0):
+        return (cls(size, size))
