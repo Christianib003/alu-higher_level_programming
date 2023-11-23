@@ -1,1 +1,1 @@
-This is was build while studying objects in pyth
+This is was build while studying objects in pyt
