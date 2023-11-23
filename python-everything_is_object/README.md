@@ -1,1 +1,1 @@
-This is for learning python object
+This is was build while studying objects in python
