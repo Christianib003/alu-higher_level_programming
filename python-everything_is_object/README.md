@@ -1,1 +1,1 @@
-This is was build while studyin
+This is was build while studyi
