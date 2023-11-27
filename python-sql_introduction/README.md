@@ -1,1 +1,1 @@
-This is for lear
+This is for lea
