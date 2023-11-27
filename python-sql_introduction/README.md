@@ -1,1 +1,1 @@
-This is for learning about SQ
+This is for learning about S
