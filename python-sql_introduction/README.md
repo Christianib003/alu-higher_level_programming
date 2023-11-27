@@ -1,1 +1,1 @@
-This is for learning about SQL
+This is for learning about SQ
