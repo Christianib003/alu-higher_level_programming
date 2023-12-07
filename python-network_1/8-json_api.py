@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-"""takes in a letter and sends a POST request
-to http://0.0.0.0:5000/search_user with the letter
-as a parameter
+"""
+Python script to send POST request to http://0.0.0.0:5000/search_user
+with parameter q, if no q given, set q=""
+If the response body is JSON formatted, print [<id>] <name>
+Otherwise, display error message
 """
 if __name__ == "__main__":
-    import sys
     import requests
-    if len(sys.argv) > 1:
-        value = sys.argv[1]
+    from sys import argv
+    data = {}
+    if len(argv) >= 2:
+        data['q'] = argv[1]
     else:
-        value = ""
-    params = {'q': value}
-    url = 'http://0.0.0.0:5000/search_user'
-    r = requests.post(url, data=params)
-    if r.headers.get('content-type') == 'application/json':
-        if r.json() == {}:
+        data['q'] = ""
+    response = requests.post('http://0.0.0.0:5000/search_user', data=data)
+    try:
+        json_string = response.json()
+        if json_string == {}:
             print("No result")
         else:
-            id_ = r.json().get('id')
-            name = r.json().get('name')
-            print("[{}] {}".format(id_, name))
-    else:
+            print("[{}] {}".format(json_string['id'], json_string['name']))
+    except Exception as err:
         print("Not a valid JSON")

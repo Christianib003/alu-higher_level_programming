@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-"""Fetches https://intranet.hbtn.io/status."""
-import urllib.request
-
-
+"""
+Python script to send POST request to given URL with given email as parameter
+"""
 if __name__ == "__main__":
-    request = urllib.request.Request("https://intranet.hbtn.io/status")
-    with urllib.request.urlopen(request) as response:
-        body = response.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(body)))
-        print("\t- content: {}".format(body))
-        print("\t- utf8 content: {}".format(body.decode("utf-8")))
+    from urllib import request, parse
+    from sys import argv
+    if argv[2]:
+        data_1 = {}
+        data_1['email'] = argv[2]
+        data_2 = parse.urlencode(data_1)
+        data = data_2.encode("UTF-8")
+    if argv[1]:
+        req = request.Request(argv[1], data)
+        with request.urlopen(req) as response:
+            content = response.read()
+            print(content.decode("UTF-8"))
