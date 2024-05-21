@@ -1,2 +1,2 @@
 # alu-higher_level_programming
-This is a repository for studying pytho
+This is a repository for studying pyth
